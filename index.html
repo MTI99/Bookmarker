@@ -1,0 +1,119 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmarker</title>
+    <link href="images/fav.icon" rel="icon" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+            </h5>
+            <button
+              onclick="closeModal()"
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h3 class="h5 mb-4">
+              Site Name or Url is not valid, Please follow the rules below :
+            </h3>
+            <p class="mb-1">
+              <i class="fa-solid fa-angles-right text-danger"></i>
+              Site name must contain at least 3 characters
+            </p>
+            <p>
+              <i class="fa-solid fa-angles-right text-danger"></i>
+              Site URL must be a valid one
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <header class="py-5">
+        <h2 id="quote">BOOKMARKER</h2>
+        <hr />
+      </header>
+
+      <section>
+        <header class="mb-5">
+          <h2 class="text-center">
+            <p>
+              <i class="fa-solid fa-bookmark"></i>
+              Bookmark your favorite sites
+              <i class="fa-solid fa-bookmark"></i>
+            </p>
+          </h2>
+        </header>
+
+        <div class="form-group fs-4">
+          <label for="bookmarkName" class="ps-1 mb-2">
+            <i class="fa-solid fa-book-bookmark"></i>
+            Site Name</label
+          >
+          <br />
+          <input
+            type="text"
+            class="form-control p-3 mb-4"
+            id="bookmarkName"
+            placeholder="Bookmark Name"
+          />
+
+          <label for="siteUrl" class="ps-1 mb-2">
+            <i class="fa-solid fa-link"></i>
+            Site URL</label
+          >
+          <br />
+          <input
+            type="text"
+            class="form-control p-3"
+            id="siteUrl"
+            placeholder="Bookmark Name"
+          />
+
+          <button
+            onclick="addBookmark()"
+            class="btn d-block m-auto my-4 px-5 fs-4 bg-primary-subtle"
+            id="submitBttn"
+          >
+            Submit
+          </button>
+          <hr />
+        </div>
+
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th scope="col" class="p-3">Index</th>
+              <th scope="col">Website Name</th>
+              <th scope="col">Visit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody id="bookmarkTable"></tbody>
+        </table>
+      </section>
+    </div>
+
+    <!-- Bootstrap Script -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome Script -->
+    <script src="js/all.min.js"></script>
+    <!-- Main Script -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
